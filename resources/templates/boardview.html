@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세 페이지</title>
+    <style>
+        .btn {border-radius: 2px; padding: 4px; box-sizing: border-box; background: #757575; color: #fff; font-weight: bold; border:1px solid gray;}
+        a{text-decoration: none;}
+    </style>
+</head>
+<body>
+
+
+<h1 th:text="${board.title}">제목입니다.</h1>
+<p th:text="${board.content}">내용이 들어갈 부분입니다.</p>
+<!--<a th:href="@{${board.filepath}}">다운받기</a>-->
+<a th:href="@{${board.filepath}}">다운받기</a>
+<a class="btn" th:href="@{/board/delete(id=${board.id})}">削除</a>
+<a class="btn" th:href="@{/board/modify/{id}(id = ${board.id})}">修正</a>
+
+
+</body>
+</html>
